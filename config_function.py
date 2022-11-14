@@ -1,6 +1,7 @@
 import plugboard_class as pb
 import rotor_class as rtr
 
+
 def config():
     # print instruction for plugboard configurations
     print('\nYou can set up to 10 configurations for the plugboard ')
