@@ -17,9 +17,9 @@ def encrypt_message():
     while True:
         
         print('Enter \'Im done\' to exit')
-        raw_message = input('Enter your message: ')
+        raw_message = input('Enter your message: ').lower()
 
-        if raw_message == 'Im done':
+        if raw_message == 'im done':
             break
 
         encrypted_message = []
