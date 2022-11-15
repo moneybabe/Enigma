@@ -10,13 +10,13 @@ def config():
         
         # check if format is correct
         break_setting = False
-        format_is_wrong = True
-        while format_is_wrong:
-            format_is_wrong = False
+        is_plugboard_format_wrong = True
+        while is_plugboard_format_wrong:
+            is_plugboard_format_wrong = False
 
             # finish config if user enter nothing
             if setting == '':
-                print('You have finished configuring, this is your final setting: ', end = '')
+                print('Final plugboard setting: ', end = '')
                 print(plugboard_setting)
                 break_setting = True
                 break
@@ -24,19 +24,19 @@ def config():
             # reenter if input is not two characters
             if len(setting) != 2:
                 setting = input('You entered more than two characters, please reenter: ')
-                format_is_wrong = True
+                is_plugboard_format_wrong = True
 
             # reenter if not within letters range
             elif (not 97 <= ord(setting[0]) <=122) or (not 97 <= ord(setting[-1]) <= 122):
                 setting = input('You entered something other than letters, please reenter: ')
-                format_is_wrong = True
+                is_plugboard_format_wrong = True
 
             # reenter if setting has repeasted
             else:
                 for x in plugboard_setting:
                     if setting[0] in x or setting[-1] in x:
                         setting = input('Your setting has repeated, please reenter: ')
-                        format_is_wrong = True
+                        is_plugboard_format_wrong = True
 
         # append input setting into plugboard_setting list
         plugboard_setting.append(setting)
@@ -45,11 +45,11 @@ def config():
             break
 
         # print plugboard_setting
-        print('Your current plugboard setting: ', end = '')
+        print('Current plugboard setting: ', end = '')
         print(plugboard_setting)
 
     # request order of rotors
-    print('Choose three rotors from a set of five and place it in order')
+    print('\nChoose three rotors from number 1 to 5 and place it in order')
     first_rotor = int(input('Which one is the first rotor? '))
     second_rotor = int(input('Which one is the second rotor? '))
     third_rotor = int(input('Which one is the third rotor? '))
