@@ -1,7 +1,3 @@
-import plugboard_class as pb
-import rotor_class as rtr
-
-
 def config():
     # print instruction for plugboard configurations
     print('\nYou can set up to 10 configurations for the plugboard ')
@@ -39,10 +35,16 @@ def config():
     # print final plugboard_setting
     print(plugboard_setting)
 
+    # request order of rotors
+    print('Choose three rotors from a set of five and place it in order')
+    first_rotor = int(input('Which one is the first rotor? '))
+    second_rotor = int(input('Which one is the second rotor? '))
+    third_rotor = int(input('Which one is the third rotor? '))
+
     # request initial position of rotors
     print('\nPlease enter the rotors\' configurations')
-    rotor1_position = int(input('Enter the initial position of rotor 1 \n'))
-    rotor2_position = int(input('Enter the initial position of rotor 2 \n'))
-    rotor3_position = int(input('Enter the initial position of rotor 3 \n'))
+    rotor1_position = int(input('Enter the initial position of rotor 1: '))
+    rotor2_position = int(input('Enter the initial position of rotor 2: '))
+    rotor3_position = int(input('Enter the initial position of rotor 3: '))
 
-    return [plugboard_setting, rotor1_position, rotor2_position, rotor3_position]
+    return [plugboard_setting, first_rotor, second_rotor, third_rotor, rotor1_position, rotor2_position, rotor3_position]
