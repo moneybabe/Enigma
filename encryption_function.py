@@ -39,24 +39,28 @@ def cipher_message():
                 ciphertxt = y
             elif i == y:
                 ciphertxt = x
-        
+
+
         # entering first rotor
         plaintxt = chr((((ord(ciphertxt) + rotors.r1.position % 26) - 97) % 26) + 97)
 
         # transformed within first rotor
         ciphertxt = rotors.r1.setting[plaintxt]
 
+        
         # entering second rotor
         plaintxt = chr((((ord(ciphertxt) + rotors.r2.position % 26 - rotors.r1.position % 26) - 97) % 26) + 97)
 
         # transformed within second rotor 
         ciphertxt = rotors.r2.setting[plaintxt]
 
+
         # entering third rotor
         plaintxt = chr((((ord(ciphertxt) + rotors.r3.position % 26 - rotors.r2.position % 26) - 97) % 26) + 97)
-
+        
         # transformed within third rotor
         ciphertxt = rotors.r3.setting[plaintxt]
+
 
         # entering the reflector
         plaintxt = chr((((ord(ciphertxt) - rotors.r3.position % 26) - 97) % 26) + 97)
@@ -67,13 +71,14 @@ def cipher_message():
 
         # reentering third rotor
         plaintxt = chr((((ord(ciphertxt) + rotors.r3.position % 26) - 97) % 26) + 97)
-
+        
         # transformed within third rotor
         for a, b in rotors.r3.setting.items():
             if plaintxt == b:
                 ciphertxt = a
                 break
-        
+
+
         # reentering second rotor
         plaintxt = chr((((ord(ciphertxt) + rotors.r2.position % 26 - rotors.r3.position % 26) - 97) % 26) + 97)
 
@@ -82,6 +87,7 @@ def cipher_message():
             if plaintxt == b:
                 ciphertxt = a
                 break
+
 
         # reentering first rotor
         plaintxt = chr((((ord(ciphertxt) + rotors.r1.position % 26 - rotors.r2.position % 26) - 97) % 26) + 97)
@@ -92,18 +98,18 @@ def cipher_message():
                 ciphertxt = a
                 break
 
+
         # exiting first rotor
         ciphertxt = chr((((ord(ciphertxt) - rotors.r1.position % 26) - 97) % 26) + 97)
-        
+
         # second time passing plugboard and return encrypted letter
         for x, y in plugboard.setting.items():
             if ciphertxt == x:
                 ciphertxt = y
             elif ciphertxt == y:
                 ciphertxt = x
-            else:
-                ciphertxt = i
-        
+
+
         ciphered_message.append(ciphertxt)
 
     print('Your cipher text:', ''.join(ciphered_message))

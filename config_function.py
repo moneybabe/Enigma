@@ -7,7 +7,7 @@ def config():
     plugboard_setting = []
     flag = False
     for i in range(10):
-        setting = input('Enter your plugboard configurations in the following format: \'a,c\' \n')
+        setting = input('Enter your plugboard configurations in the following format: \'a,c\' \n').lower()
 
         # finish config if user enter nothing
         if setting == '':
