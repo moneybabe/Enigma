@@ -15,7 +15,30 @@ def cipher_message():
     rotors.r2.position = rotor_positions[1]
     rotors.r3.position = rotor_positions[2]
 
-    raw_message = input('Enter your message: ').lower()
+    raw_message = input('Enter your message (no special character, space allowed): ').lower()
+
+    # check if raw message contains special character
+    while True:
+        invalid_raw_message = False
+
+        for i in raw_message:
+            if not (97 <= ord(i) <= 122 or ord(i) == 32):
+                raw_message = input('No special character, please reenter: ')
+                invalid_raw_message = True
+
+        if not invalid_raw_message:
+            break
+
+
+    blank_space_index = []
+    while True:
+        index = raw_message.find(' ')
+        
+        if index == -1:
+            break
+
+        blank_space_index.append(index)
+        raw_message = raw_message[:index] + raw_message[index + 1:]
 
     ciphered_message = []
     # encrypt the letters in message one by one
@@ -111,5 +134,12 @@ def cipher_message():
 
 
         ciphered_message.append(ciphertxt)
+    
+    ciphered_message = ''.join(ciphered_message).upper()
 
-    print('Your cipher text:', ''.join(ciphered_message))
+    x = 0
+    for i in blank_space_index:
+        ciphered_message = ciphered_message[:i+x] + ' ' + ciphered_message[i+x:]
+        x += 1
+
+    print('Your cipher text:', ciphered_message)

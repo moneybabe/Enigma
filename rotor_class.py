@@ -232,5 +232,3 @@ class Rotors():
         self.r1 = Rotor(first_rotor)
         self.r2 = Rotor(second_rotor)
         self.r3 = Rotor(third_rotor)
-
-

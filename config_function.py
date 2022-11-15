@@ -8,36 +8,37 @@ def config():
         lst = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth']
         setting = input('Enter the ' + lst[i] + ' two letters you want to connect in plugboard (examples: pt or yo): ').lower()
         
-        # check if format is correct
-        break_plugboard_setting = False
-        is_plugboard_format_wrong = True
-
         # enter while loop for format checking
-        while is_plugboard_format_wrong:
-            is_plugboard_format_wrong = False
+        while True:
+            is_plugboard_format_right = True
+            break_plugboard_setting = False
 
             # finish config if user enter nothing
             if setting == '':
                 print('Final plugboard setting: ', end = '')
                 print(plugboard_setting)
+                is_plugboard_format_right = True
                 break_plugboard_setting = True
 
             # reenter if input is not two characters
             elif len(setting) != 2:
                 setting = input('Please enter only two characters: ')
-                is_plugboard_format_wrong = True
+                is_plugboard_format_right = False
 
             # reenter if not within letters range
             elif (not 97 <= ord(setting[0]) <=122) or (not 97 <= ord(setting[-1]) <= 122):
                 setting = input('Please enter only letters: ')
-                is_plugboard_format_wrong = True
+                is_plugboard_format_right = False
 
             # reenter if setting has repeasted
             else:
                 for x in plugboard_setting:
                     if setting[0] in x or setting[-1] in x:
                         setting = input('Your setting has repeated, please reenter: ')
-                        is_plugboard_format_wrong = True
+                        is_plugboard_format_right = False
+
+            if is_plugboard_format_right:
+                break
 
         if break_plugboard_setting:
             break
@@ -60,29 +61,31 @@ def config():
         capital_lst = ['First', 'Second', 'Third']
         rotor_number = input(capital_lst[i] + ' rotor number: ')
 
-        # enter while loop for checking if rotor number format is wrong
-        is_rotor_number_wrong = True
-        while is_rotor_number_wrong:
-            is_rotor_number_wrong = False
+        # enter while loop for checking if rotor number format it_righTrue  is_rotor_numbet_right = True
+        while True: 
+            is_rotor_numbet_right = True
 
             if len(rotor_number) != 1:
 
                 if rotor_number == '':
                     rotor_number = input('You entered nothing, please reenter: ')
-                    is_rotor_number_wrong = True
+                    is_rotor_numbet_right = False
                 
                 else:
                     rotor_number = input('Please enter only one character: ')
-                    is_rotor_number_wrong = True
+                    is_rotor_numbet_right = False
 
             elif not 49 <= ord(rotor_number) <= 53:
                 rotor_number = input('Please enter only integer from 1 to 5: ')
-                is_rotor_number_wrong = True
+                is_rotor_numbet_right = False
 
             elif int(rotor_number) in rotor_numbers:
                 rotor_number = input('Your rotor has repeated, please reenter: ')
-                is_rotor_number_wrong = True
-        
+                is_rotor_numbet_right = False
+
+            if is_rotor_numbet_right:
+                break
+
         rotor_numbers.append(int(rotor_number))
 
         # print rotors' order
@@ -105,22 +108,24 @@ def config():
     for i in range(3):
         rotor_position = input('Initial position of ' + lst[i] + ' rotor: ')
 
-        # enter while loop for checking if rotor position format is wrong
-        is_rotor_position_wrong = True
-        while is_rotor_position_wrong:
-            is_rotor_position_wrong = False
+        # enter while loop for checking if rotor position format it_righTrue  is_rotor_position_right = True
+        while True:
+            is_rotor_position_right = True
 
             if not 1 <= len(rotor_position) <= 2:
                 rotor_position = input('Please enter only intergers from 0 to 25: ')
-                is_rotor_position_wrong = True
+                is_rotor_position_right = False
             
             elif (not 48 <= ord(rotor_position[0]) <= 57) or (not 48 <= ord(rotor_position[-1]) <= 57):
                 rotor_position = input('Please enter only integers: ')
-                is_rotor_position_wrong = True
+                is_rotor_position_right = False
 
             elif not 0 <= int(rotor_position) <= 25:
                 rotor_position = input('Please enter only intergers from 0 to 25: ')
-                is_rotor_position_wrong = True
+                is_rotor_position_right = False
+
+            if is_rotor_position_right:
+                break
 
         rotor_positions.append(int(rotor_position))
 
