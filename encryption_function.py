@@ -6,14 +6,14 @@ import rotor_class as rtr
 def cipher_message():
 
     # initialize configuration of plugboard and rotor starting position
-    [plugboard_setting, first_rotor, second_rotor, third_rotor, rotor1_position, rotor2_position, rotor3_position] = cf.config()
+    [plugboard_setting, rotor_numbers, rotor_positions] = cf.config()
     plugboard = pb.Plugboard(plugboard_setting)
 
     # initialize rotors
-    rotors = rtr.Rotors(first_rotor, second_rotor, third_rotor)
-    rotors.r1.position = rotor1_position
-    rotors.r2.position = rotor2_position
-    rotors.r3.position = rotor3_position
+    rotors = rtr.Rotors(rotor_numbers[0], rotor_numbers[1], rotor_numbers[2])
+    rotors.r1.position = rotor_positions[0]
+    rotors.r2.position = rotor_positions[1]
+    rotors.r3.position = rotor_positions[2]
 
     raw_message = input('Enter your message: ').lower()
 
