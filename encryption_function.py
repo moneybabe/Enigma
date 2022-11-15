@@ -29,7 +29,7 @@ def cipher_message():
         if not invalid_raw_message:
             break
 
-
+    # remove all blank spaces
     blank_space_index = []
     while True:
         index = raw_message.find(' ')
@@ -39,6 +39,7 @@ def cipher_message():
 
         blank_space_index.append(index)
         raw_message = raw_message[:index] + raw_message[index + 1:]
+
 
     ciphered_message = []
     # encrypt the letters in message one by one
@@ -137,9 +138,16 @@ def cipher_message():
     
     ciphered_message = ''.join(ciphered_message).upper()
 
+    # put back all blank spaces
     x = 0
     for i in blank_space_index:
         ciphered_message = ciphered_message[:i+x] + ' ' + ciphered_message[i+x:]
         x += 1
 
     print('Your cipher text:', ciphered_message)
+    print('Your final plugboard config: ', end = '') 
+    print(plugboard_setting)
+    print('Your final rotors\' order: ', end = '') 
+    print(rotor_numbers)
+    print('Your final rotors'' positions', end = '') 
+    print(rotor_positions)
