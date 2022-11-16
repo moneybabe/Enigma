@@ -1,4 +1,3 @@
-import config_function as cf
 import plugboard_class as pb
 import rotor_class as rtr
 
