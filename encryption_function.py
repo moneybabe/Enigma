@@ -22,7 +22,7 @@ def cipher_message(config_lst):
         invalid_raw_message = False
 
         for i in raw_message:
-            if not (97 <= ord(i) <= 122 or ord(i) == 32):
+            if not (i.isalpha() or ord(i) == 32):
                 raw_message = input('No special character, please reenter: ')
                 invalid_raw_message = True
 
@@ -41,8 +41,8 @@ def cipher_message(config_lst):
         raw_message = raw_message[:index] + raw_message[index + 1:]
 
 
-    ciphered_message = []
     # encrypt the letters in message one by one
+    ciphered_message = []
     for i in raw_message:
 
         # first rotor turns

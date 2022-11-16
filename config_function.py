@@ -25,12 +25,12 @@ def config():
                 setting = input('Please enter only two characters: ')
                 is_plugboard_format_right = False
 
-            # reenter if not within letters range
-            elif (not 97 <= ord(setting[0]) <=122) or (not 97 <= ord(setting[-1]) <= 122):
+            # reenter if input is not letter
+            elif not setting.isalpha():
                 setting = input('Please enter only letters: ')
                 is_plugboard_format_right = False
 
-            # reenter if setting has repeasted
+            # reenter if setting has repeated
             else:
                 for x in plugboard_setting:
                     if setting[0] in x or setting[-1] in x:
