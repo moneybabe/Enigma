@@ -3,17 +3,18 @@ import plugboard_class as pb
 import rotor_class as rtr
 
 
-def cipher_message():
+def cipher_message(config_lst):
 
-    # initialize configuration of plugboard and rotor starting position
-    [plugboard_setting, rotor_numbers, rotor_positions] = cf.config()
-    plugboard = pb.Plugboard(plugboard_setting)
+    # initialize plugboard config
+    plugboard = pb.Plugboard(config_lst[0])
 
-    # initialize rotors
-    rotors = rtr.Rotors(rotor_numbers[0], rotor_numbers[1], rotor_numbers[2])
-    rotors.r1.position = rotor_positions[0]
-    rotors.r2.position = rotor_positions[1]
-    rotors.r3.position = rotor_positions[2]
+    # initialize rotors' order
+    rotors = rtr.Rotors(config_lst[1][0], config_lst[1][1], config_lst[1][2])
+
+    #initialize rotors' positions
+    rotors.r1.position = config_lst[2][0]
+    rotors.r2.position = config_lst[2][1]
+    rotors.r3.position = config_lst[2][2]
 
     raw_message = input('Enter your message (no special character, space allowed): ').lower()
 
@@ -144,10 +145,10 @@ def cipher_message():
         ciphered_message = ciphered_message[:i+x] + ' ' + ciphered_message[i+x:]
         x += 1
 
-    print('Your cipher text:', ciphered_message)
     print('Your final plugboard config: ', end = '') 
-    print(plugboard_setting)
+    print(config_lst[0])
     print('Your final rotors\' order: ', end = '') 
-    print(rotor_numbers)
+    print(config_lst[1])
     print('Your final rotors'' positions', end = '') 
-    print(rotor_positions)
+    print(config_lst[2])
+    print('Your cipher text:', ciphered_message)
