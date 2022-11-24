@@ -1,5 +1,5 @@
 import encryption_function as ef
-import config_function as cf
+import overall_config_function as cf
 
 while True:
     ef.cipher_message(cf.config())

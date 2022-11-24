@@ -1,37 +1,3 @@
-# THIS IS TO GENERATE RANDOM WIRING WITHIN ROTORS
-# import random
-
-# # create rotor class
-# class Rotor():
-    
-#     # initialize self.notch, self.position; self.setting as empty dictionary
-#     notch = random.choice(range(26))
-#     setting = {}
-#     position = 0
-
-#     # generate random setting to self.setting
-#     def __init__(self):
-        
-#         # create an alphabet list
-#         alphabet_lst = []
-#         for i in range(97,123):
-#             alphabet_lst.append(chr(i))
-        
-#         # create self.setting as a dictionary {'a': 'e', 'b': 'z'} for example
-#         for i in range(97,123):
-#             value = random.choice(alphabet_lst)
-#             key = chr(i)
-#             self.setting[key] = value
-#             alphabet_lst.remove(value)
-
-# class Rotors():
-#     r1 = Rotor()
-#     r2 = Rotor()
-#     r3 = Rotor()
-#     end = Rotor()
-
-
-
 # THIS IS TO REPLICATE THE EXACT WIRING OF THE FIVE ROTORS USED IN WWII
 class Rotor():
 
@@ -196,6 +162,8 @@ class Rotor():
                 }
             self.notch = 25
 
+
+# group all three rotors into one class
 class Rotors():
 
     reflector = {
@@ -232,3 +200,38 @@ class Rotors():
         self.r1 = Rotor(first_rotor)
         self.r2 = Rotor(second_rotor)
         self.r3 = Rotor(third_rotor)
+
+
+
+
+# THIS IS TO GENERATE RANDOM WIRING WITHIN ROTORS
+# import random
+
+# # create rotor class
+# class Rotor():
+    
+#     # initialize self.notch, self.position; self.setting as empty dictionary
+#     notch = random.choice(range(26))
+#     setting = {}
+#     position = 0
+
+#     # generate random setting to self.setting
+#     def __init__(self):
+        
+#         # create an alphabet list
+#         alphabet_lst = []
+#         for i in range(97,123):
+#             alphabet_lst.append(chr(i))
+        
+#         # create self.setting as a dictionary {'a': 'e', 'b': 'z'} for example
+#         for i in range(97,123):
+#             value = random.choice(alphabet_lst)
+#             key = chr(i)
+#             self.setting[key] = value
+#             alphabet_lst.remove(value)
+
+# class Rotors():
+#     r1 = Rotor()
+#     r2 = Rotor()
+#     r3 = Rotor()
+#     end = Rotor()
