@@ -1,5 +1,5 @@
-import plugboard_class as pb
-import rotor_class as rtr
+import modules.plugboard_class as pb
+import modules.rotor_class as rtr
 
 
 def cipher_message(config_lst):

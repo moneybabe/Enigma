@@ -1,6 +1,6 @@
-import sub_config_functions.rotor_position_config as rpc
-import sub_config_functions.rotor_order_config as roc
-import sub_config_functions.plugboard_config as pc
+import modules.sub_config_functions.rotor_position_config as rpc
+import modules.sub_config_functions.rotor_order_config as roc
+import modules.sub_config_functions.plugboard_config as pc
 
 def config():
 
