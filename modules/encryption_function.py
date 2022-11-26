@@ -1,5 +1,5 @@
-import modules.plugboard_class as pb
-import modules.rotor_class as rtr
+import modules.classes.plugboard_class as pb
+import modules.classes.rotor_class as rtr
 
 
 def request_message():
