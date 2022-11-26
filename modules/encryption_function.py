@@ -12,7 +12,7 @@ def request_message():
         Message to be encrypted / decrypted.
     '''
 
-    raw_message = input('\nEnter your message (no special character, space allowed): ').lower()
+    raw_message = input('\nEnter your message (only letters, space allowed): ').lower()
 
     # check if raw message contains special character
     while True:
