@@ -2,19 +2,7 @@ import modules.plugboard_class as pb
 import modules.rotor_class as rtr
 
 
-def cipher_message(config_lst):
-
-    # initialize plugboard config
-    plugboard = pb.Plugboard(config_lst[0])
-
-    # initialize rotors' order
-    rotors = rtr.Rotors(config_lst[1][0], config_lst[1][1], config_lst[1][2])
-
-    #initialize rotors' positions
-    rotors.r1.position = config_lst[2][0]
-    rotors.r2.position = config_lst[2][1]
-    rotors.r3.position = config_lst[2][2]
-
+def request_message():
     raw_message = input('Enter your message (no special character, space allowed): ').lower()
 
     # check if raw message contains special character
@@ -28,6 +16,21 @@ def cipher_message(config_lst):
 
         if not invalid_raw_message:
             break
+
+    return raw_message
+
+def cipher_message(config_lst, raw_message):
+
+    # initialize plugboard config
+    plugboard = pb.Plugboard(config_lst[0])
+
+    # initialize rotors' order
+    rotors = rtr.Rotors(config_lst[1][0], config_lst[1][1], config_lst[1][2])
+
+    #initialize rotors' positions
+    rotors.r1.position = config_lst[2][0]
+    rotors.r2.position = config_lst[2][1]
+    rotors.r3.position = config_lst[2][2]
 
     # remove all blank spaces
     blank_space_index = []
@@ -144,10 +147,14 @@ def cipher_message(config_lst):
         ciphered_message = ciphered_message[:i+x] + ' ' + ciphered_message[i+x:]
         x += 1
 
-    print('Your final plugboard config: ', end = '') 
+    print('\nYour final plugboard config: ') 
     print(config_lst[0])
-    print('Your final rotors\' order: ', end = '') 
+    print('Your final rotors\' order: ') 
     print(config_lst[1])
-    print('Your final rotors'' positions', end = '') 
+    print('Your final rotors\' positions: ') 
     print(config_lst[2])
-    print('Your cipher text:', ciphered_message)
+    print('Your cipher text: ')
+    print(ciphered_message)
+    print('')
+
+    return ciphered_message

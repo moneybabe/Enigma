@@ -16,7 +16,7 @@ def plugboard_config():
 
             # finish config if user enter nothing
             if setting == '':
-                print('Final plugboard setting: ', end = '')
+                print('Final plugboard setting: ')
                 print(plugboard_setting)
                 is_plugboard_format_right = True
                 break_plugboard_setting = True
@@ -48,7 +48,7 @@ def plugboard_config():
         plugboard_setting.append(setting)
 
         # print plugboard_setting
-        print('Current plugboard setting: ', end = '')
+        print('Current plugboard setting: ')
         print(plugboard_setting)
 
     return plugboard_setting
