@@ -2,6 +2,8 @@ import builtins
 
 '''
 Functions to mock input and output for test_enigma.py
+
+Credit to @mauricioaniche for providing this module: https://gist.github.com/mauricioaniche/671fb553a81df9e6b29434b7e6e53491
 '''
 
 input_values = []

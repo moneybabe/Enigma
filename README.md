@@ -61,3 +61,6 @@ Configure the enigma machine according to instructions and input the message. <b
 
 ### Unit test
 Execute `$pytest test_enigma.py`
+
+### Credit
+Credit to @mauricioaniche for providing the testing module: https://gist.github.com/mauricioaniche/671fb553a81df9e6b29434b7e6e53491
