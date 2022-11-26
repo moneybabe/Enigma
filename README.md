@@ -1,6 +1,6 @@
 # Enigma
 
-This project implements the enigma machine with python. <br />
+##### This project implements the enigma machine with python. <br />
 Here is a link to a youtube video showing a physical engima and a brief intro to its mechanism: https://www.youtube.com/watch?v=ASfAPOiq_eQ <br />
 Here is a link to a youtube video explaining its mechanism in detail with animation aid: https://www.youtube.com/watch?v=ybkkiGtJmkM <br />
 
