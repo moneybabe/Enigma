@@ -7,7 +7,9 @@ def main():
     '''
 
     while True:
-        ef.cipher_message(cf.config(), ef.request_message())
+        config_lst = cf.config()
+        raw_message = ef.request_message()
+        ef.cipher_message(config_lst, raw_message)
         is_keep_going = input('Keep going? (y/n) ').lower()
 
         if is_keep_going != 'y':
