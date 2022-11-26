@@ -2,7 +2,7 @@ import modules.encryption_function as ef
 import modules.sub_config_functions.plugboard_config as pb
 import modules.sub_config_functions.rotor_order_config as roc
 import modules.sub_config_functions.rotor_position_config as rpc
-import modules.overall_config_function as ocf
+import modules.wrapped_config_function as ocf
 from main import main
 import random
 import string

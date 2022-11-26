@@ -1,5 +1,5 @@
 import modules.encryption_function as ef
-import modules.overall_config_function as cf
+import modules.wrapped_config_function as cf
 
 def main():
     '''
