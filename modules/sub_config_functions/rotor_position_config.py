@@ -29,7 +29,7 @@ def rotor_position_config():
 
         rotor_positions.append(int(rotor_position))
 
-    print('Final rotors\' positions: ', end = '')
+    print('Final rotors\' positions: ')
     print(rotor_positions)
 
     return rotor_positions

@@ -37,11 +37,11 @@ def rotor_order_config():
 
         # print rotors' order
         if i == 3:
-            print('Final rotors\' order: ', end = '')
+            print('Final rotors\' order: ')
             print(rotor_numbers)    
 
         else:
-            print('Current rotors\' order: ', end = '')
+            print('Current rotors\' order: ')
             print(rotor_numbers)
 
     return rotor_numbers

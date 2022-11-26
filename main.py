@@ -10,4 +10,5 @@ def main():
             print('HEIL NEO')
             break
 
-main()
+if __name__ == '__main__':
+    main()

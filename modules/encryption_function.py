@@ -3,7 +3,7 @@ import modules.rotor_class as rtr
 
 
 def request_message():
-    raw_message = input('Enter your message (no special character, space allowed): ').lower()
+    raw_message = input('\nEnter your message (no special character, space allowed): ').lower()
 
     # check if raw message contains special character
     while True:
@@ -13,6 +13,7 @@ def request_message():
             if not (i.isalpha() or ord(i) == 32):
                 raw_message = input('No special character, please reenter: ')
                 invalid_raw_message = True
+                break
 
         if not invalid_raw_message:
             break
