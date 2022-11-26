@@ -1,5 +1,4 @@
 import unittest
-from unittest.mock import patch
 import modules.encryption_function as ef
 import modules.sub_config_functions.plugboard_config as pb
 import random
