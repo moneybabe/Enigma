@@ -20,7 +20,7 @@ def request_message():
 
         for i in raw_message:
             if not (i.isalpha() or ord(i) == 32):
-                raw_message = input('No special character, please reenter: ')
+                raw_message = input('No special character, please reenter: ').lower()
                 invalid_raw_message = True
                 break
 
