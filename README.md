@@ -52,7 +52,7 @@ When the user presses a letter, <br />
 - 'A' is mapped to 'P' ultimately
 
 ### Remark
-Enigma is self-recipricol because of the reflector. <br />
+Enigma is self-reciprocal because of the reflector. <br />
 It means to decrypt the message, you need to configure the enigma machine the same way as the sender and input the cipher text, which will return the plain text.
 
 ## How to operate the python-coded Enigma
