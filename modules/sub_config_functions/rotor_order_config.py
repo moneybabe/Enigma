@@ -1,4 +1,12 @@
 def rotor_order_config():
+    '''
+    Request rotors' arrangement and check if the input values are valid.
+
+    Returns
+    -------
+    rotor_numbers : list
+        List of the rotors' arrangment, total of 3 elements.
+    '''
 
     # request rotors' order
     print('\nChoose three rotors from number 1 to 5')

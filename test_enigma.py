@@ -8,6 +8,7 @@ import random
 import string
 from testing_modules.mock_input_output_module import set_keyboard_input, get_display_output
 
+'''Test all functions'''
 
 def test_plugboard_config():
     set_keyboard_input(['123', 'ab', ''])
@@ -48,7 +49,7 @@ def test_request_message():
 
 def test_encryption_function():
     config_lst = [['ab', 'cd', 'ef'], [1, 4, 5], [15, 24, 6]]
-    assert ef.cipher_message(config_lst, 'hello world') == 'JYHYI FCWJQ'
+    assert ef.cipher_message(config_lst, 'hello world') == 'EYHYI FCWJQ'
 
 
 def test_main_function():

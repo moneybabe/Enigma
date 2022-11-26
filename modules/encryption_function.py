@@ -3,6 +3,15 @@ import modules.rotor_class as rtr
 
 
 def request_message():
+    '''
+    Request input message and check if input is valid.
+
+    Returns
+    -------
+    raw_message : str
+        Message to be encrypted / decrypted.
+    '''
+
     raw_message = input('\nEnter your message (no special character, space allowed): ').lower()
 
     # check if raw message contains special character
@@ -20,7 +29,23 @@ def request_message():
 
     return raw_message
 
+
 def cipher_message(config_lst, raw_message):
+    '''
+    Encrypt / decrypt message according to user's configurations.
+
+    Parameters
+    ----------
+    config_lst : list
+        List of [plugboard setting, rotors' arrangement, rotors' rotational positions].
+    raw_message : str
+        User's input message.
+
+    Returns
+    -------
+    ciphered_message : str
+        Output message after encryption / decryption.
+    '''
 
     # initialize plugboard config
     plugboard = pb.Plugboard(config_lst[0])
@@ -33,7 +58,7 @@ def cipher_message(config_lst, raw_message):
     rotors.r2.position = config_lst[2][1]
     rotors.r3.position = config_lst[2][2]
 
-    # remove all blank spaces
+    # remove all blank spaces and record the blank spaces' index
     blank_space_index = []
     while True:
         index = raw_message.find(' ')
@@ -140,6 +165,7 @@ def cipher_message(config_lst, raw_message):
 
         ciphered_message.append(ciphertxt)
     
+    # combine all ciphered letter to form the message
     ciphered_message = ''.join(ciphered_message).upper()
 
     # put back all blank spaces
@@ -148,6 +174,7 @@ def cipher_message(config_lst, raw_message):
         ciphered_message = ciphered_message[:i+x] + ' ' + ciphered_message[i+x:]
         x += 1
 
+    # remind user's of their configurations and print the ciphered_message
     print('\nYour final plugboard config: ') 
     print(config_lst[0])
     print('Your final rotors\' order: ') 

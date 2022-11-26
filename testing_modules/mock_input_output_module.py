@@ -1,5 +1,9 @@
 import builtins
 
+'''
+Functions to mock input and output for test_enigma.py
+'''
+
 input_values = []
 print_values = []
 

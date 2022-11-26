@@ -1,5 +1,13 @@
 def rotor_position_config():
+    '''
+    Request rotors' initial rotational positions and check if the input values are valid.
 
+    Returns
+    -------
+    rotor_positions : list
+        List of the rotors' initial rotational positions, total of 3 elements.
+    '''
+    
     # request initial position of rotors
     print('\nEnter the rotors\' initial positions (from 0 to 25 corresponding A to Z)')
     

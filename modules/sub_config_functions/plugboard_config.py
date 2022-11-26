@@ -1,4 +1,12 @@
 def plugboard_config():
+    '''
+    Request plugboard wiring configurations and check if input is valid.
+
+    Returns
+    -------
+    plugboard_setting : list
+        List of plugboard wire connections.
+    '''
 
     # print instruction for plugboard configurations
     print('\nYou can set up to 10 configurations for the plugboard, press enter to finish configuring')

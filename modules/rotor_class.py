@@ -1,5 +1,21 @@
-# THIS IS TO REPLICATE THE EXACT WIRING OF THE FIVE ROTORS USED IN WWII
 class Rotor():
+    '''
+    Initialize the chosen rotor.
+
+    Parameters
+    ----------
+    number : int
+        The chosen number of rotor, from 1 to 5.
+
+    Attributes
+    ----------
+    position : int
+        Rotational position of the chosen rotor.
+    notch : int
+        Notch position of the chosen rotor.
+    setting : dict
+        Wiring of the chosen rotor.
+    '''
 
     # class Rotor has three attributes in total: position, notch, and setting
     position = 0
@@ -21,7 +37,7 @@ class Rotor():
                 'j': 'z',
                 'k': 'n',
                 'l': 't',           # EKMFLGDQVZNTOWYHXUSPAIBRCJ
-                'm': 'o',
+                'm': 'o',           # notch = Q
                 'n': 'w',
                 'o': 'y',
                 'p': 'h',
@@ -29,14 +45,14 @@ class Rotor():
                 'r': 'u',
                 's': 's',
                 't': 'p',
-                'u': 'a',
+                'u': 'a',       
                 'v': 'i',
                 'w': 'b',
                 'x': 'r',
                 'y': 'c',
                 'z': 'j'
                 }
-            self.notch = 17
+            self.notch = 16
 
         elif number == 2:
             self.setting = {
@@ -52,7 +68,7 @@ class Rotor():
                 'j': 'b',
                 'k': 'l',
                 'l': 'h',           # ABCDEFGHIJKLMNOPQRSTUVWXYZ = AJDKSIRUXBLHWTMCQGZNPYFVOE
-                'm': 'w',           # notch = Q
+                'm': 'w',           # notch = E
                 'n': 't',
                 'o': 'm',
                 'p': 'c',
@@ -165,6 +181,29 @@ class Rotor():
 
 # group all three rotors into one class
 class Rotors():
+    '''
+    Group all three chosen rotors into one object according to user's arrangement.
+
+    Parameters
+    ----------
+    first_rotor : int
+        Number of first rotor.
+    second_rotor : int
+        Number of second rotor.
+    third_rotor : int
+        Number of third rotor.
+
+    Attributes
+    ----------
+    reflector : dict
+        Wiring of the reflector
+    r1 : obj
+        First rotor object.
+    r2 : obj
+        Second rotor object.
+    r3 : obj
+        Third rotor object.
+    '''
 
     reflector = {
         'a': 'e',
@@ -200,38 +239,3 @@ class Rotors():
         self.r1 = Rotor(first_rotor)
         self.r2 = Rotor(second_rotor)
         self.r3 = Rotor(third_rotor)
-
-
-
-
-# THIS IS TO GENERATE RANDOM WIRING WITHIN ROTORS
-# import random
-
-# # create rotor class
-# class Rotor():
-    
-#     # initialize self.notch, self.position; self.setting as empty dictionary
-#     notch = random.choice(range(26))
-#     setting = {}
-#     position = 0
-
-#     # generate random setting to self.setting
-#     def __init__(self):
-        
-#         # create an alphabet list
-#         alphabet_lst = []
-#         for i in range(97,123):
-#             alphabet_lst.append(chr(i))
-        
-#         # create self.setting as a dictionary {'a': 'e', 'b': 'z'} for example
-#         for i in range(97,123):
-#             value = random.choice(alphabet_lst)
-#             key = chr(i)
-#             self.setting[key] = value
-#             alphabet_lst.remove(value)
-
-# class Rotors():
-#     r1 = Rotor()
-#     r2 = Rotor()
-#     r3 = Rotor()
-#     end = Rotor()
