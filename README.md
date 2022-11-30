@@ -3,7 +3,7 @@
 ##### This project implements the enigma machine with python. <br />
 Here is a link to a youtube video showing a physical engima and a brief intro to its mechanism: https://www.youtube.com/watch?v=ASfAPOiq_eQ <br />
 Here is a link to a youtube video explaining its mechanism in detail with animation aid: https://www.youtube.com/watch?v=ybkkiGtJmkM <br />
-<br />
+
 ## Directory structure
 ### Main operation files
 `main.py` wraps all codes for execution. <br />
@@ -17,7 +17,7 @@ Inside `~/modules/`, there are two major functions: 1) `overall_config_function.
 `test_enigma.py` includes 7 unit tests to test the major functions in the program. <br />
 There is also `~/testing_modules/`, which contains `mock_input_output_module.py`. <br />
 `mock_input_output_modules.py` provides functions to mock input and output, which are useful for the unit tests. <br />
-<br />
+
 ## How to operate the python-coded Enigma
 Execute `$python main.py`. <br />
 Configure the enigma machine according to instructions and input the message. <br />
@@ -25,11 +25,11 @@ Configure the enigma machine according to instructions and input the message. <b
 ### Unit test
 Execute `$pytest test_enigma.py`. <br />
 <br />
-<br /><br />
+
 # Working principles of Enigma
 Below is a brief explanation of the working principles of Enigma to help you understand this program. <br />
 It is still recommended to watch the videos attached at the top to understand better. <br />
-<br />
+
 ## Components of the enigma machine
 The enigma machine consists of three main components: 1) plugboard, 2) three rotors, 3) reflector. <br />
 
@@ -46,13 +46,13 @@ After ciphering each letter, the first rotor will rotate by one slot. For every 
 
 ### Reflector
 The reflector has pre-determined internal wirings that map each letter to another. <br />
-<br />
+
 ## Required machine configruations
 There are three major configurations needed before operating the machine. <br />
 - Plugboard wirings
 - Rotors' order arrangment
 - Rotors' initial rotational position 
-<br /> <br />
+
 ## Algorithm of the enigma machine
 Assume all rotors are aligned (intial rotational positions of all rotors are 0): <br />
 When the user presses a letter, <br /> 
