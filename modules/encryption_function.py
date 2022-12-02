@@ -69,7 +69,6 @@ def cipher_message(config_lst, raw_message):
         blank_space_index.append(index)
         raw_message = raw_message[:index] + raw_message[index + 1:]
 
-
     # encrypt the letters in message one by one
     ciphered_message = []
     for i in raw_message:
@@ -92,7 +91,6 @@ def cipher_message(config_lst, raw_message):
                 ciphertxt = y
             elif i == y:
                 ciphertxt = x
-
 
         # entering first rotor
         plaintxt = chr((((ord(ciphertxt) + rotors.r1.position % 26) - 97) % 26) + 97)
