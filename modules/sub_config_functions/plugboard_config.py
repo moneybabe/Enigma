@@ -8,7 +8,6 @@ def plugboard_config():
         List of plugboard wire connections.
     '''
 
-    # print instruction for plugboard configurations
     print('\nYou can set up to 10 configurations for the plugboard, press enter to finish configuring')
 
     # request input of plugboard setting, and store the settings as a list
@@ -20,14 +19,14 @@ def plugboard_config():
         # enter while loop for format checking
         while True:
             is_plugboard_format_right = True
-            break_plugboard_setting = False
+            is_finished_configuring = False
 
             # finish config if user enter nothing
             if setting == '':
                 print('Final plugboard setting: ')
                 print(plugboard_setting)
                 is_plugboard_format_right = True
-                break_plugboard_setting = True
+                is_finished_configuring = True
 
             # reenter if input is not two characters
             elif len(setting) != 2:
@@ -49,13 +48,12 @@ def plugboard_config():
             if is_plugboard_format_right:
                 break
 
-        if break_plugboard_setting:
+        if is_finished_configuring:
             break
 
-        # append input setting into plugboard_setting list
         plugboard_setting.append(setting)
 
-        # print plugboard_setting
+        # remind users what they have configured so far to avoid repeat input
         print('Current plugboard setting: ')
         print(plugboard_setting)
 
