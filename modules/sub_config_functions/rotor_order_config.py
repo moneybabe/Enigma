@@ -20,19 +20,12 @@ def rotor_order_config():
         while True: 
             is_rotor_numbet_right = True
 
-            # if entered more than one character or eneter nothing
-            if len(rotor_number) != 1:
-
-                if rotor_number == '':
-                    rotor_number = input('You entered nothing, please reenter: ')
-                    is_rotor_numbet_right = False
-                
-                else:
-                    rotor_number = input('Please enter only one character: ')
-                    is_rotor_numbet_right = False
+            if not rotor_number.isnumeric():
+                rotor_number = input('Please enter only interger: ')
+                is_rotor_numbet_right = False
 
             # if entered number is out of range
-            elif not 49 <= ord(rotor_number) <= 53:
+            elif not 1 <= int(rotor_number) <= 5:
                 rotor_number = input('Please enter only integer from 1 to 5: ')
                 is_rotor_numbet_right = False
 

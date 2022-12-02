@@ -29,19 +29,19 @@ def test_plugboard_config():
 
 # test rotor_order_config function returns correct config even with invalid input
 def test_rotor_order_config():
-    set_keyboard_input(['1', '6', '3', '1', ' ', '!@#', 'random', '5'])
+    set_keyboard_input(['1', '2.0', '6', '3', '1.5', '1', ' ', '!@#', 'random', '5'])
     assert roc.rotor_order_config() == [1, 3, 5]
 
 
 # test rotor_position_config function returns correect config even with invalid input
 def test_rotor_position_config():
-    set_keyboard_input(['-7', '12', '26', 'random str', '#!@$', ' ', '4', '17'])
+    set_keyboard_input(['-7', '12', '3.0', '26', '1.9', 'random str', '#!@$', ' ', '4', '17'])
     assert rpc.rotor_position_config() == [12, 4, 17]
 
 
 # test overall_config_function returns correct config
 def test_overall_config_function():
-    set_keyboard_input(['qw', 'er', 'ty', '', '4', '2', '1', '', '23', '5', '13'])
+    set_keyboard_input(['qw', 'er', 'ty', '', '4', '2', '5.0', '1', '', '23', '5', '13'])
     assert ocf.config() == [['qw', 'er', 'ty'], [4, 2, 1], [23, 5, 13]]
 
 

@@ -20,11 +20,7 @@ def rotor_position_config():
         while True:
             is_rotor_position_right = True
 
-            if not 1 <= len(rotor_position) <= 2:
-                rotor_position = input('Please enter only intergers from 0 to 25: ')
-                is_rotor_position_right = False
-            
-            elif (not 48 <= ord(rotor_position[0]) <= 57) or (not 48 <= ord(rotor_position[-1]) <= 57):
+            if not rotor_position.isnumeric():
                 rotor_position = input('Please enter only integers: ')
                 is_rotor_position_right = False
 
