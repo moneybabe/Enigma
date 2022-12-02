@@ -58,7 +58,7 @@ def cipher_message(config_lst, raw_message):
     rotors.r2.position = config_lst[2][1]
     rotors.r3.position = config_lst[2][2]
 
-    # remove all blank spaces and record the blank spaces' index
+    # remove all blank spaces and record the blank spaces' index; preparing to encrypt
     blank_space_index = []
     while True:
         index = raw_message.find(' ')
@@ -74,14 +74,14 @@ def cipher_message(config_lst, raw_message):
     ciphered_message = []
     for i in raw_message:
 
-        # first rotor turns
+        # first rotor shifts
         rotors.r1.position += 1
 
-        # second rotor turns
+        # second rotor shifts
         if rotors.r1.position % 26 == rotors.r1.notch:
             rotors.r2.position += 1
 
-        # thirs rotor turns
+        # third rotor shifts
         if rotors.r2.position % 26 == rotors.r2.notch:
             rotors.r3.position += 1
         
@@ -100,13 +100,11 @@ def cipher_message(config_lst, raw_message):
         # transformed within first rotor
         ciphertxt = rotors.r1.setting[plaintxt]
 
-        
         # entering second rotor
         plaintxt = chr((((ord(ciphertxt) + rotors.r2.position % 26 - rotors.r1.position % 26) - 97) % 26) + 97)
 
         # transformed within second rotor 
         ciphertxt = rotors.r2.setting[plaintxt]
-
 
         # entering third rotor
         plaintxt = chr((((ord(ciphertxt) + rotors.r3.position % 26 - rotors.r2.position % 26) - 97) % 26) + 97)
@@ -114,13 +112,11 @@ def cipher_message(config_lst, raw_message):
         # transformed within third rotor
         ciphertxt = rotors.r3.setting[plaintxt]
 
-
         # entering the reflector
         plaintxt = chr((((ord(ciphertxt) - rotors.r3.position % 26) - 97) % 26) + 97)
 
         # transformed within reflector
         ciphertxt = rotors.reflector[plaintxt]
-
 
         # reentering third rotor
         plaintxt = chr((((ord(ciphertxt) + rotors.r3.position % 26) - 97) % 26) + 97)
@@ -131,7 +127,6 @@ def cipher_message(config_lst, raw_message):
                 ciphertxt = a
                 break
 
-
         # reentering second rotor
         plaintxt = chr((((ord(ciphertxt) + rotors.r2.position % 26 - rotors.r3.position % 26) - 97) % 26) + 97)
 
@@ -141,7 +136,6 @@ def cipher_message(config_lst, raw_message):
                 ciphertxt = a
                 break
 
-
         # reentering first rotor
         plaintxt = chr((((ord(ciphertxt) + rotors.r1.position % 26 - rotors.r2.position % 26) - 97) % 26) + 97)
 
@@ -150,7 +144,6 @@ def cipher_message(config_lst, raw_message):
             if plaintxt == b:
                 ciphertxt = a
                 break
-
 
         # exiting first rotor
         ciphertxt = chr((((ord(ciphertxt) - rotors.r1.position % 26) - 97) % 26) + 97)
@@ -162,10 +155,10 @@ def cipher_message(config_lst, raw_message):
             elif ciphertxt == y:
                 ciphertxt = x
 
-
+        # finished encrypting one letter and append to the previous results
         ciphered_message.append(ciphertxt)
     
-    # combine all ciphered letter to form the message
+    # combine all ciphered letter to form the message; preparing to print a legible message
     ciphered_message = ''.join(ciphered_message).upper()
 
     # put back all blank spaces

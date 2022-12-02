@@ -8,18 +8,19 @@ def rotor_order_config():
         List of the rotors' arrangment, total of 3 elements.
     '''
 
-    # request rotors' order
     print('\nChoose three rotors from number 1 to 5')
 
     rotor_numbers = []
     for i in range(3):
+
         capital_lst = ['First', 'Second', 'Third']
         rotor_number = input(capital_lst[i] + ' rotor number: ')
 
-        # enter while loop for checking if rotor number format it_righTrue  is_rotor_numbet_right = True
+        # check if input is valid
         while True: 
             is_rotor_numbet_right = True
 
+            # if entered more than one character or eneter nothing
             if len(rotor_number) != 1:
 
                 if rotor_number == '':
@@ -30,10 +31,12 @@ def rotor_order_config():
                     rotor_number = input('Please enter only one character: ')
                     is_rotor_numbet_right = False
 
+            # if entered number is out of range
             elif not 49 <= ord(rotor_number) <= 53:
                 rotor_number = input('Please enter only integer from 1 to 5: ')
                 is_rotor_numbet_right = False
 
+            # if entered number has repeated
             elif int(rotor_number) in rotor_numbers:
                 rotor_number = input('Your rotor has repeated, please reenter: ')
                 is_rotor_numbet_right = False
@@ -43,7 +46,7 @@ def rotor_order_config():
 
         rotor_numbers.append(int(rotor_number))
 
-        # print rotors' order
+        # remind user of current config to avoid repeating input
         if i == 3:
             print('Final rotors\' order: ')
             print(rotor_numbers)    

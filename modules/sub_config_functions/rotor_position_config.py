@@ -16,7 +16,7 @@ def rotor_position_config():
     for i in range(3):
         rotor_position = input('Initial position of ' + lst[i] + ' rotor: ')
 
-        # enter while loop for checking if rotor position format it_righTrue  is_rotor_position_right = True
+        # check if input is valid
         while True:
             is_rotor_position_right = True
 
