@@ -10,7 +10,8 @@ Here is a link to a youtube video explaining its mechanism in detail with animat
 Inside `~/modules/`, there are two major functions: 1) `overall_config_function.py` and 2) `encryption_function.py` <br /> <br />
 
 `overall_config_function.py` is the function that request user's input to configurate the machine. It wraps three sub-functions from `~/modules/sub_config_functinos/`. <br />
-`~/modules/sub_fonfig_functinos/` contains three sub-functions request input to configurate plugboard, rotors' order arrangment, and rotos' initial rotational position respectively. <br /> <br />
+`~/modules/sub_fonfig_functinos/` contains three sub-functions that request input to configurate plugboard, rotors' order arrangment, and rotos' initial rotational position respectively. <br /> <br />
+
 `encryption_function.py` is the function that implements the actual algorithm. It takes in the input message and machine configuration, and it outputs the cipher text. <br /> 
 
 ### Test files
